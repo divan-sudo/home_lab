@@ -18,4 +18,3 @@ services:
 
 networks:
   lab_net:
-    external: true

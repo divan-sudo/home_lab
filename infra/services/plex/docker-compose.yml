@@ -14,7 +14,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Bratislava
+      - TZ=${TZ}
       - VERSION=docker
 
     volumes:

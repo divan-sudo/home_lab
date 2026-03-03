@@ -4,9 +4,9 @@ services:
     container_name: pihole
     restart: unless-stopped
     environment:
-      TZ: Europe/Bratislava
+      TZ: ${TZ}
       WEBPASSWORD: "pihole"
-      FTLCONF_LOCAL_IPV4: "10.18.18.11"
+      FTLCONF_LOCAL_IPV4: "${SERVER_IP}"
       DNSMASQ_LISTENING: "all"
     ports:
       - "53:53/tcp"

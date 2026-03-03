@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: ${PG_DEFAULT_DB:-lab}
+      POSTGRES_USER: ${PG_DEFAULT_USER:-lab_admin}
+      POSTGRES_PASSWORD: ${PG_DEFAULT_PASSWORD}
+
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+    networks:
+      - home_lab
+
+    # Odporúčam defaultne NEOTVÁRAŤ port.
+    # Ak chceš prístup z LAN (napr. z PC), použi toto:
+    # ports:
+    #   - "10.18.18.11:5432:5432"
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    restart: unless-stopped
+    networks:
+      - home_lab
+    ports:
+      - "10.18.18.11:8081:8080"
+
+volumes:
+  pg_data:
+
+networks:
+  home_lab:

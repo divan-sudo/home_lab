@@ -13,4 +13,3 @@ volumes:
 
 networks:
   lab_net:
-    external: true

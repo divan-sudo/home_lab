@@ -6,3 +6,9 @@ include:
   - ./infra/uptime/docker-compose.yml
   # - ./infra/services/pihole/docker-compose.yml
   - ./infra/services/plex/docker-compose.yml
+  - ./infra/services/postgres/docker-compose.yml
+
+networks:
+  home_lab:
+    name: home_lab
+    driver: bridge
