@@ -1,0 +1,13 @@
+services:
+  lab-web:
+    image: nginx:alpine
+    container_name: lab-web
+    restart: unless-stopped
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+    networks:
+      - lab_net
+
+networks:
+  lab_net:
+    external: true

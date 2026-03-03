@@ -1,0 +1,24 @@
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    network_mode: "host"
+
+    devices:
+      - /dev/dri:/dev/dri   # Intel Quick Sync
+
+    group_add:
+      - "render"
+      - "video"
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bratislava
+      - VERSION=docker
+
+    volumes:
+      - /opt/plex/config:/config
+      - /mnt/nas:/movies
+
+    restart: unless-stopped

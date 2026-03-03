@@ -1,0 +1,8 @@
+# Compose v2 supports `include` (Docker Desktop / docker CLI plugin)
+include:
+  - ./code/web_app/docker-compose.yml
+  - ./infra/npm/docker-compose.yml
+  - ./infra/portainer/docker-compose.yml
+  - ./infra/uptime/docker-compose.yml
+  # - ./infra/services/pihole/docker-compose.yml
+  - ./infra/services/plex/docker-compose.yml
