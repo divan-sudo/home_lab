@@ -6,10 +6,10 @@ services:
     volumes:
       - uptime_data:/app/data
     networks:
-      - lab_net
+      - home_lab
 
 volumes:
   uptime_data:
 
 networks:
-  lab_net:
+  home_lab:

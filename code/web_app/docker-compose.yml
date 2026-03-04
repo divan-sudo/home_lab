@@ -6,7 +6,7 @@ services:
     volumes:
       - ./web:/usr/share/nginx/html:ro
     networks:
-      - lab_net
+      - home_lab
 
 networks:
-  lab_net:
+  home_lab:

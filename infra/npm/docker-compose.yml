@@ -14,7 +14,7 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     networks:
-      - lab_net
+      - home_lab
 
 networks:
-  lab_net:
+  home_lab:

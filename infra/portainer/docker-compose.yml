@@ -8,10 +8,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
     networks:
-      - lab_net
+      - home_lab
 
 volumes:
   portainer_data:
 
 networks:
-  lab_net:
+  home_lab:

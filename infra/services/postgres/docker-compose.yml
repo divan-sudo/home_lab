@@ -14,11 +14,8 @@ services:
 
     networks:
       - home_lab
-
-    # Odporúčam defaultne NEOTVÁRAŤ port.
-    # Ak chceš prístup z LAN (napr. z PC), použi toto:
-    # ports:
-    #   - "${SERVER_IP}:5432:5432"
+    ports:
+      - "${SERVER_IP}:5432:5432"
 
   adminer:
     image: adminer:latest
