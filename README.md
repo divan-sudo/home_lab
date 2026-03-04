@@ -229,3 +229,36 @@ The home lab infrastructure is designed to be:
 - scalable
 
 This foundation allows new services and applications to be added without restructuring the entire environment.
+
+---
+
+## Documentation script:
+
+### Requirements
+
+Install Python:
+`sudo apt install python3-pip`
+
+and 
+
+`pip3 install pyyaml`
+
+There is no package for Ubuntu, so use this.
+`sudo apt install python3-yaml`
+
+`sqlite3` is a part of Python, nothing extra is required.
+
+From the repository root:
+`python3 scripts/generate-services-md.py`
+
+Generates:
+
+`docs/services.md`
+
+If your NPM is elswhere:
+
+`python3 scripts/generate-services-md.py --npm-db infra/npm/data/database.sqlite`
+
+If Mermaid in not wanted:
+
+`python3 scripts/generate-services-md.py --no-mermaid`
