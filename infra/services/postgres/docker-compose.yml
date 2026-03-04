@@ -18,7 +18,7 @@ services:
     # Odporúčam defaultne NEOTVÁRAŤ port.
     # Ak chceš prístup z LAN (napr. z PC), použi toto:
     # ports:
-    #   - "10.18.18.11:5432:5432"
+    #   - "${SERVER_IP}:5432:5432"
 
   adminer:
     image: adminer:latest
@@ -27,7 +27,7 @@ services:
     networks:
       - home_lab
     ports:
-      - "10.18.18.11:8081:8080"
+      - "${SERVER_IP}:8081:8080"
 
 volumes:
   pg_data:
