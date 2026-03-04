@@ -5,3 +5,4 @@ bash
 .tmp
 .DS_Store
 Thumbs.db
+infra/npm/data/
