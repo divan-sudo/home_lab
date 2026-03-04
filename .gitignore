@@ -3,3 +3,5 @@ node_modules/
 bash
 *.log
 .tmp
+.DS_Store
+Thumbs.db

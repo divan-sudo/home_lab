@@ -1,108 +1,128 @@
 <!doctype html>
 <html lang="sk">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>web.lab — Dashboard</title>
-  <style>
-    :root { --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#aab3d6; --border:#24305f; }
-    *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
-      background:linear-gradient(120deg,#0b1020,#0d1530); color:var(--text);}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
-    h1{margin:0;font-size:22px;letter-spacing:.2px}
-    .sub{margin:6px 0 0;color:var(--muted);font-size:13px}
-    .pill{display:inline-flex;gap:10px;align-items:center;padding:8px 12px;border:1px solid var(--border);
-      border-radius:999px;background:rgba(18,26,51,.6);color:var(--muted);font-size:12px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
-    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    a.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);
-      background:rgba(18,26,51,.7);border-radius:16px;padding:16px;transition:transform .08s ease,border-color .08s ease,background .08s ease}
-    a.card:hover{transform:translateY(-2px);border-color:#3b4aa6;background:rgba(18,26,51,.9)}
-    .title{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .name{font-weight:650}
-    .tag{font-size:11px;color:var(--muted);border:1px solid var(--border);padding:3px 8px;border-radius:999px}
-    .desc{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.4}
-    .section{margin-top:22px}
-    .section h2{font-size:14px;margin:0 0 10px;color:var(--muted);font-weight:600;letter-spacing:.4px;text-transform:uppercase}
-    footer{margin-top:28px;color:var(--muted);font-size:12px}
-    .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;
-      border:1px solid var(--border);background:rgba(18,26,51,.6);color:var(--text);text-decoration:none}
-    .btn:hover{border-color:#3b4aa6}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>web.lab — Dashboard</h1>
-        <div class="sub">Core linky + priestor pre lab stránky. Udržiavaj to v Gitea repozitári “infra”.</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>web.lab — Dashboard</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div>
+          <h1>web.lab — Dashboard</h1>
+          <div class="sub">
+            Core linky + priestor pre lab stránky. Udržiavaj to v Gitea
+            repozitári “infra”.
+          </div>
+        </div>
+        <div class="pill">Server: 10.18.18.11 • Prostredie: LAB</div>
+        <button class="btn" id="themeBtn" type="button">Theme</button>
+      </header>
+
+      <div class="section">
+        <h2>Služby</h2>
+        <div class="grid">
+          <a
+            class="card"
+            href="http://git.lab.divan-sudo.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Gitea</div>
+              <div class="tag">git</div>
+            </div>
+            <div class="desc">Repozitáre, docs, infra ako kód.</div>
+          </a>
+
+          <a
+            class="card"
+            href="http://portainer.lab.divan-sudo.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Portainer</div>
+              <div class="tag">docker</div>
+            </div>
+            <div class="desc">Stacks, kontajnery, rýchle debugovanie.</div>
+          </a>
+
+          <a
+            class="card"
+            href="http://10.18.18.11:81/nginx/proxy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Nginx Proxy Manager</div>
+              <div class="tag">proxy</div>
+            </div>
+            <div class="desc">Reverse proxy, SSL, hostnames.</div>
+          </a>
+
+          <a
+            class="card"
+            href="http://uptime.lab.divan-sudo.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Status</div>
+              <div class="tag">uptime</div>
+            </div>
+            <div class="desc">Uptime / health page (voliteľné).</div>
+          </a>
+
+          <a
+            class="card"
+            href="https://logs.lab/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Logs</div>
+              <div class="tag">todo</div>
+            </div>
+            <div class="desc">Miesto pre budúce logy/observability.</div>
+          </a>
+
+          <a
+            class="card"
+            href="http://10.18.18.11:32400/web"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="title">
+              <div class="name">Plex</div>
+              <div class="tag">plex</div>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="pill">Server: 10.18.18.11 • Prostredie: LAB</div>
-    </header>
 
-    <div class="section">
-      <h2>Služby</h2>
-      <div class="grid">
-        <a class="card" href="http://git.lab.divan-sudo.com/" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Gitea</div><div class="tag">git</div>
-          </div>
-          <div class="desc">Repozitáre, docs, infra ako kód.</div>
-        </a>
-
-        <a class="card" href="http://portainer.lab.divan-sudo.com/" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Portainer</div><div class="tag">docker</div>
-          </div>
-          <div class="desc">Stacks, kontajnery, rýchle debugovanie.</div>
-        </a>
-
-        <a class="card" href="http://10.18.18.11:81/nginx/proxy" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Nginx Proxy Manager</div><div class="tag">proxy</div>
-          </div>
-          <div class="desc">Reverse proxy, SSL, hostnames.</div>
-      	</a>
-
-        <a class="card" href="http://uptime.lab.divan-sudo.com/" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Status</div><div class="tag">uptime</div>
-          </div>
-          <div class="desc">Uptime / health page (voliteľné).</div>
-        </a>
-
-        <a class="card" href="https://logs.lab/" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Logs</div><div class="tag">todo</div>
-          </div>
-          <div class="desc">Miesto pre budúce logy/observability.</div>
-        </a>
-
-        <a class="card" href="http://10.18.18.11:32400/web" target="_blank" rel="noreferrer">
-          <div class="title">
-            <div class="name">Plex</div><div class="tag">plex</div>
-          </div>
-        </a>
+      <div class="section">
+        <h2>Lab stránky</h2>
+        <div class="links">
+          <a class="btn" href="/notes/">Notes</a>
+          <a class="btn" href="/projects/">Projects</a>
+          <a class="btn" href="/runbooks/">Runbooks</a>
+          <a class="btn" href="/todo/">TODO</a>
+        </div>
+        <div class="sub">
+          Tieto stránky zatiaľ môžu byť prázdne placeholdery.
+        </div>
       </div>
+
+      <footer>
+        Tip: drž linky a texty v infra repo, nech to vieš obnoviť po reinstalle.
+      </footer>
     </div>
 
-    <div class="section">
-      <h2>Lab stránky</h2>
-      <div class="links">
-        <a class="btn" href="/notes/">Notes</a>
-        <a class="btn" href="/projects/">Projects</a>
-        <a class="btn" href="/runbooks/">Runbooks</a>
-        <a class="btn" href="/todo/">TODO</a>
-      </div>
-      <div class="sub">Tieto stránky zatiaľ môžu byť prázdne placeholdery.</div>
-    </div>
-
-    <footer>
-      Tip: drž linky a texty v infra repo, nech to vieš obnoviť po reinstalle.
-    </footer>
-  </div>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>
