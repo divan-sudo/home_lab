@@ -20,7 +20,6 @@ services:
     volumes:
       - /opt/plex/config:/config
       - /mnt/nas:/movies
-    
-      - /mnt/homeserver
+      - /mnt/homeserver:/movies
 
     restart: unless-stopped
