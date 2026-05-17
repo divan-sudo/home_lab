@@ -5,5 +5,5 @@ bash
 .tmp
 .DS_Store
 Thumbs.db
-infra/npm/data/.gitkeep
-infra/npm/letsencrypt/.gitkeep
+infra/npm/data/
+infra/npm/letsencrypt/
