@@ -1,3 +1,5 @@
+this is a work in progress
+
 # Home Lab Infrastructure Basics
 
 This document describes the core architecture and operational principles of the `home_lab` project.  
@@ -11,7 +13,7 @@ It serves as a reference so the infrastructure can be easily resumed, maintained
 
 - **OS:** Ubuntu  
 - **Container Runtime:** Docker + Docker Compose v2  
-- **Server IP:** `10.18.18.11`  
+- **Server IP:** `192.168.1.5` or as you please
 - **Domain:** Managed via Cloudflare  
 - **Access:** Currently limited to the local network (LAN)
 
